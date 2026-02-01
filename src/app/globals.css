@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer utilities {
+  .text-shadow-cyber-red {
+    text-shadow:
+      2.1px -1px 0 rgb(237, 141, 141),
+      0.5px 1.2px 0 rgb(141, 98, 98);
+  }
+}
+
+.icon-wrapper {
+  display: flex;
+  align-items: center;
+  transition: filter 0.25s ease;
+}
+
+.icon-wrapper:hover {
+  filter: brightness(0) saturate(100%);
+}
