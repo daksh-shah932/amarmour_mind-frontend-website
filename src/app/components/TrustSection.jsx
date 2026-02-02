@@ -5,7 +5,7 @@ import { orbitron, rajdhani } from "../fonts";
 
 export default function TrustSection() {
   return (
-    <section className="relative z-10 py-20 border-t border-white/10">
+    <section className="relative z-10 pt-20 border-t border-white/10">
       <div className="max-w-7xl mx-auto px-6 flex flex-col gap-16 items-center text-center">
 
         {/* GRAY-SCALE LOGO BAR */}

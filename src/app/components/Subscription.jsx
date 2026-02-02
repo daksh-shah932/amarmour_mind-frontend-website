@@ -30,7 +30,9 @@ export default function SubscriptionWhatYouGet() {
           <ul className="flex flex-col gap-6">
 
             {/* ITEM 1 */}
-            <li className="flex items-start gap-4">
+            <li className="flex items-start gap-4 p-2 rounded-md
+             transition-all duration-300
+             hover:ml-3 hover:bg-white/5 cursor-pointer ">
               <span className="text-green-400 mt-1">✔</span>
               <div>
                 <p className="font-semibold">Dashboard Access</p>
@@ -42,7 +44,9 @@ export default function SubscriptionWhatYouGet() {
             </li>
 
             {/* ITEM 2 */}
-            <li className="flex items-start gap-4">
+            <li className="flex items-start gap-4 p-2 rounded-md
+             transition-all duration-300
+             hover:ml-3 hover:bg-white/5 cursor-pointer">
               <span className="text-green-400 mt-1">✔</span>
               <div>
                 <p className="font-semibold">Hybrid Testing</p>
@@ -54,7 +58,9 @@ export default function SubscriptionWhatYouGet() {
             </li>
 
             {/* ITEM 3 */}
-            <li className="flex items-start gap-4">
+            <li className="flex items-start gap-4 p-2 rounded-md
+             transition-all duration-300
+             hover:ml-3 hover:bg-white/5 cursor-pointer">
               <span className="text-green-400 mt-1">✔</span>
               <div>
                 <p className="font-semibold">Developer Support</p>
@@ -66,7 +72,9 @@ export default function SubscriptionWhatYouGet() {
             </li>
 
             {/* ITEM 4 */}
-            <li className="flex items-start gap-4">
+            <li className="flex items-start gap-4 p-2 rounded-md
+             transition-all duration-300
+             hover:ml-3 hover:bg-white/5 cursor-pointer">
               <span className="text-green-400 mt-1">✔</span>
               <div>
                 <p className="font-semibold">Re-test Guarantee</p>

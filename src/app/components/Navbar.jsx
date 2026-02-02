@@ -72,6 +72,7 @@ export default function Navbar() {
         </li>
 
         {/* SERVICES */}
+
         <li>
           <Link href="/services" className={linkClass("/services", "nav-services")}>
             <lord-icon
@@ -84,7 +85,18 @@ export default function Navbar() {
             SERVICES
           </Link>
         </li>
-
+        <li>
+          <Link href="/workflow" className={linkClass("/workflow", "nav-workflow")}>
+            <lord-icon
+              src="https://cdn.lordicon.com/euaablbm.json"
+              trigger="hover"
+              target=".nav-workflow"
+              colors="primary:#b8b1b1,secondary:#ed8d8d"
+              style={{ width: "26px", height: "26px" }}
+            />
+            WORKFLOW
+          </Link>
+        </li>
         {/* CTA */}
         <li>
           <Link

@@ -2,7 +2,7 @@
 
 import "./globals.css";
 import Navbar from "./components/Navbar";
-// import Footer from "./components/Footer";
+import Footer from "./components/Footer";
 import { useEffect, useState } from "react";
 import { rajdhani } from "./fonts";
 
@@ -69,7 +69,7 @@ export default function RootLayout({ children }) {
           {children}
         </main>
 
-        {/* <Footer /> */}
+        <Footer />
       </body>
     </html>
   );
