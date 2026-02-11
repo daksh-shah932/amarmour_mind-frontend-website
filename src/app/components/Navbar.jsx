@@ -3,33 +3,36 @@
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { rajdhani } from "../fonts";
+import { useState } from "react";
 
 export default function Navbar() {
   const pathname = usePathname();
   const router = useRouter();
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const linkClass = (path, targetClass) =>
     `${rajdhani.className} ${targetClass}
      flex items-center gap-2
      transition-all duration-200
-     ${pathname === path
-      ? "text-servicehead font-semibold scale-105"
-      : "text-white hover:text-servicehead hover:scale-110"
-    }`;
+     ${
+       pathname === path
+         ? "text-servicehead font-semibold scale-105"
+         : "text-white hover:text-servicehead hover:scale-110"
+     }`;
 
   return (
     <nav
       className="
         sticky top-4 mx-auto
-        w-[88vw] h-[72px]
+        w-[92%] lg:w-[80%]   /* thinner navbar */
+        max-w-6xl            /* prevents full stretch on big screens */
+        min-h-[60px] lg:h-[70px]
         z-50
         bg-gradient-to-b from-[#4b4343] to-[#3a3333]
         border border-navborder
         rounded-lg
-        px-10
+        px-5 lg:px-10
         flex items-center justify-between
-        transition-transform duration-300 ease-out
-        hover:scale-[1.01]
       "
     >
       {/* LOGO */}
@@ -37,12 +40,35 @@ export default function Navbar() {
         onClick={() => router.push("/")}
         src="/ArmourMind.png"
         alt="ArmourMind Logo"
-        className="h-12 cursor-pointer select-none"
+        className="h-9 lg:h-12 cursor-pointer select-none"
       />
 
-      {/* NAV LINKS */}
-      <ul className="flex items-center gap-6 text-lg">
+      {/* HAMBURGER — now visible until LARGE screens */}
+      <button
+        className="lg:hidden text-white text-2xl"
+        onClick={() => setMenuOpen(!menuOpen)}
+      >
+        {menuOpen ? "✕" : "☰"}
+      </button>
 
+      {/* NAV LINKS */}
+      <ul
+        className={`
+          absolute lg:static
+          top-[75px] left-0
+          w-full lg:w-auto
+          bg-[#3a3333] lg:bg-transparent
+          border lg:border-none border-navborder
+          rounded-lg lg:rounded-none
+          flex flex-col lg:flex-row
+          items-center
+          gap-6
+          text-lg
+          py-6 lg:py-0
+          transition-all duration-300
+          ${menuOpen ? "flex" : "hidden"} lg:flex
+        `}
+      >
         {/* HOME */}
         <li>
           <Link href="/" className={linkClass("/", "nav-home")}>
@@ -72,7 +98,6 @@ export default function Navbar() {
         </li>
 
         {/* SERVICES */}
-
         <li>
           <Link href="/services" className={linkClass("/services", "nav-services")}>
             <lord-icon
@@ -85,6 +110,8 @@ export default function Navbar() {
             SERVICES
           </Link>
         </li>
+
+        {/* WORKFLOW */}
         <li>
           <Link href="/workflow" className={linkClass("/workflow", "nav-workflow")}>
             <lord-icon
@@ -97,6 +124,7 @@ export default function Navbar() {
             WORKFLOW
           </Link>
         </li>
+
         {/* CTA */}
         <li>
           <Link
@@ -122,7 +150,6 @@ export default function Navbar() {
             CONTACT US
           </Link>
         </li>
-
       </ul>
     </nav>
   );
