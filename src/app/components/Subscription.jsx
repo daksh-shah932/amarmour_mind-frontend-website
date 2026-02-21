@@ -37,7 +37,7 @@ export default function SubscriptionWhatYouGet() {
               <div>
                 <p className="font-semibold">Dashboard Access</p>
                 <p className={`${rajdhani.className} text-white/70`}>
-                  24/7 real-time visibility into your application and
+                  24 / 7 real-time visibility into your application and
                   infrastructure security posture.
                 </p>
               </div>

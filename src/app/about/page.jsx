@@ -54,7 +54,7 @@ const About = () => {
 
           <div className="card bg-service_card_color border border-navborder w-full sm:w-[80%] lg:w-full h-28 sm:h-32 lg:h-36 rounded-lg flex items-center justify-center flex-col">
             <div className={`${orbitron.className} font-bold text-3xl sm:text-4xl lg:text-5xl text-servicehead`}>
-              24/7
+              24 / 7
             </div>
             <div className="font-semibold text-sm sm:text-base">
               Threat Monitoring
